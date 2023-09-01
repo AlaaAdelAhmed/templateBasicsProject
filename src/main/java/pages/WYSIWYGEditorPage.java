@@ -42,8 +42,11 @@ public class WYSIWYGEditorPage {
 
     public String ValidateOntextadded(){
         switchToFrame();
-        return driver.findElement(textField).getText();
-        //switchToParentFrame(); Why return error?
+        String text = driver.findElement(textField).getText();
+        switchToParentFrame();
+        return text;
+
+
     }
 
     public void waitUntilTextLoaded(){
